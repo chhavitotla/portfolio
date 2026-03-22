@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowDown, Github, Linkedin, Code2 } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Code2, Download } from 'lucide-react';
 
 export function IntroSection() {
   return (
@@ -77,14 +77,21 @@ export function IntroSection() {
                   <p className="text-lg text-accent">Surat, Gujarat, India</p>
                 </div>
                 <p className="text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  AI Engineer & Full-Stack Developer at SVNIT Surat,
-                  passionate about building intelligent systems with <span className="text-primary font-semibold">Generative AI</span> and
+                  Engineering undergrad focused on building intelligent, scalable products with <span className="text-primary font-semibold">AI</span> and
                   <span className="text-neon-cyan font-semibold"> full-stack development</span>.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4">
+              <Button
+                size="lg"
+                className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
+                onClick={() => window.open('https://drive.google.com/drive/folders/1UjQ3WvQtfqMFMAvQtoDaWM1whSdh-5ON', '_blank')}
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Resume
+              </Button>
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
