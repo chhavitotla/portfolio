@@ -1,58 +1,41 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, Trophy, Users, Megaphone, TrendingUp, ExternalLink, Medal } from 'lucide-react';
+import { Award, Trophy, Users, Code2, Globe, TrendingUp, ExternalLink, Medal } from 'lucide-react';
 
 const achievements = [
   {
-    icon: Award,
-    title: "Internship Completion Certificate",
-    description: "Received an official Internship Completion Certificate for successfully completing my Software Engineering Internship.",
-    color: "accent",
-    type: "recognition",
-    link: "https://drive.google.com/file/d/1iPn_6JSGKOOaSckFPAFw2zo_2hRWHf7h/view?usp=sharing"
-  },
-  {
     icon: Trophy,
-    title: "OPTIGO Coding Contest",
-    description: "Secured 12th rank in OPTIGO, the inter-IIIT coding contest hosted by CODAME, IIIT Bhopal.",
+    title: "Smart India Hackathon 2025 — National Finalist",
+    description: "Selected among the top teams nationally to compete in the final round of India's largest government-led hackathon.",
     color: "primary",
     type: "achievement"
   },
   {
-    icon: Medal,
-    title: "Official Recognition",
-    description: "Received an official certificate from IIT Guwahati for consistent technical contribution in CVAlign.",
-    color: "neon-cyan",
-    type: "recognition",
-    link: "https://drive.google.com/file/d/1ZrJN9vZV0oKhWeuzyGFFYIt0RWSfnjb4/view"
+    icon: TrendingUp,
+    title: "LeetCode Contest Rating — 1648",
+    description: "Achieved a peak contest rating of 1648 through consistent participation in competitive programming contests.",
+    color: "accent",
+    type: "achievement"
   }
 ];
 
 const extracurriculars = [
   {
-    icon: Users,
-    title: "Script Writer",
-    organization: "Abhinay, Dramatics Club – IIIT Pune",
-    description: "Scripted and directed multiple stage performances with a focus on character design.",
-    color: "neon-green",
+    icon: Code2,
+    title: "Executive Member",
+    organization: "Association for Computing Machinery (ACM)",
+    description: "Spearheaded Hour of Code sessions across schools and classrooms, introducing 150+ students to programming fundamentals.",
+    color: "neon-cyan",
     hoverColor: "primary"
   },
   {
-    icon: TrendingUp,
-    title: "PR and Marketing Associate",
-    organization: "QuantNum – Mathematics Club – IIIT Pune", 
-    description: "Promoted Mathematics Club events and supported event planning, boosting engagement and participation across the city.",
-    color: "accent",
+    icon: Globe,
+    title: "Executive Member",
+    organization: "Google Developer Student Club (GDGC)",
+    description: "Initiated and led 5+ workshops on web development (HTML/CSS, React), machine learning basics, and cloud computing.",
+    color: "neon-green",
     hoverColor: "neon-cyan"
-  },
-  {
-    icon: Megaphone,
-    title: "Marketing Associate",
-    organization: "E-Cell, Entrepreneurship Club – IIIT Pune",
-    description: "Hosted startup sessions and expanded outreach to foster entrepreneurship on campus.",
-    color: "neon-cyan",
-    hoverColor: "neon-green"
   }
 ];
 
@@ -60,7 +43,7 @@ export function AchievementsSection() {
   return (
     <section className="min-h-screen py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-background/95" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6">
@@ -87,7 +70,7 @@ export function AchievementsSection() {
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
-                <Card 
+                <Card
                   key={achievement.title}
                   className={`group hover:shadow-xl transition-all duration-500 border-${achievement.color}/30 hover:border-${achievement.color}/60 bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-sm hover:scale-[1.02]`}
                   style={{ animationDelay: `${index * 0.2}s` }}
@@ -108,20 +91,6 @@ export function AchievementsSection() {
                     <p className="text-muted-foreground leading-relaxed">
                       {achievement.description}
                     </p>
-                    
-                    {achievement.link && (
-                      <div className="flex justify-end">
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className={`border-${achievement.color}/30 hover:bg-${achievement.color}/10 hover:border-${achievement.color}/50 transition-all duration-300`}
-                          onClick={() => window.open(achievement.link, '_blank')}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View Certificate
-                        </Button>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
               );
@@ -129,7 +98,7 @@ export function AchievementsSection() {
           </div>
         </div>
 
-        {/* Extracurricular Activities Section */}
+        {/* Student Chapters & Clubs Section */}
         <div>
           <div className="flex items-center gap-4 mb-10">
             <div className="flex items-center gap-3">
@@ -138,13 +107,13 @@ export function AchievementsSection() {
             </div>
             <div className="h-px flex-1 bg-gradient-to-r from-neon-green/50 to-transparent" />
           </div>
- 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {extracurriculars.map((activity, index) => {
               const Icon = activity.icon;
               return (
-                <Card 
-                  key={activity.title}
+                <Card
+                  key={activity.organization}
                   className={`group hover:shadow-xl transition-all duration-500 border-${activity.color}/30 hover:border-${activity.hoverColor}/60 bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-sm hover:scale-105 cursor-pointer`}
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >

@@ -1,31 +1,31 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Database, Wrench, Cloud } from 'lucide-react';
+import { Code, Database, Wrench, Cloud, Brain } from 'lucide-react';
 
 const skillCategories = [
   {
     title: "Languages",
     icon: Code,
-    skills: ["C", "C++", "Java", "Python", "JavaScript", "SQL"],
+    skills: ["Python", "C++", "C", "JavaScript", "TypeScript", "SQL"],
     color: "primary"
   },
   {
-    title: "Frameworks",
+    title: "Frameworks & Libraries",
     icon: Wrench,
-    skills: ["Node.js", "React.js", "Express.js", "FastAPI", "LangChain", "LangGraph"],
+    skills: ["React.js", "Next.js", "FastAPI", "Node.js", "Express.js", "LangChain", "LangGraph", "LangSmith"],
     color: "accent"
   },
   {
-    title: "Databases",
-    icon: Database,
-    skills: ["MongoDB", "PostgreSQL"],
-    color: "neon-green"
+    title: "AI & Vector Tools",
+    icon: Brain,
+    skills: ["FAISS", "Pydantic", "Zod", "Google Gemini"],
+    color: "neon-cyan"
   },
   {
-    title: "DevOps & Tools",
-    icon: Cloud,
-    skills: ["Docker", "Git", "GitHub"],
-    color: "neon-cyan"
+    title: "Databases & Infra",
+    icon: Database,
+    skills: ["MongoDB", "MySQL", "Redis", "Git", "Postman"],
+    color: "neon-green"
   }
 ];
 
@@ -36,7 +36,7 @@ export function SkillsSection() {
       <div className="absolute inset-0 grid-pattern opacity-15" />
       <div className="absolute top-40 right-20 w-40 h-40 border border-primary/20 rounded-full floating-animation" />
       <div className="absolute bottom-40 left-20 w-32 h-32 border border-accent/20 rotate-45 floating-animation" style={{ animationDelay: '3s' }} />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -51,7 +51,7 @@ export function SkillsSection() {
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <Card 
+              <Card
                 key={category.title}
                 className="portfolio-card group"
                 style={{ animationDelay: `${index * 0.2}s` }}
@@ -93,15 +93,15 @@ export function SkillsSection() {
           <Card className="portfolio-card bg-gradient-to-br from-card via-card to-card/50">
             <CardHeader>
               <CardTitle className="text-center text-xl gradient-text">
-                Additional Expertise
+                Knowledge Areas
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="space-y-2">
-                  <div className="text-2xl">🤖</div>
-                  <h4 className="font-semibold text-primary">Gen-AI Development</h4>
-                  <p className="text-sm text-muted-foreground">RAG, LLM Integration, Prompt Engineering</p>
+                  <div className="text-2xl">🧠</div>
+                  <h4 className="font-semibold text-primary">CS Fundamentals</h4>
+                  <p className="text-sm text-muted-foreground">DSA, OOP, DBMS, Operating Systems</p>
                 </div>
                 <div className="space-y-2">
                   <div className="text-2xl">🌐</div>
@@ -109,9 +109,9 @@ export function SkillsSection() {
                   <p className="text-sm text-muted-foreground">End-to-end application development</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-2xl">⚡</div>
-                  <h4 className="font-semibold text-neon-green">Performance Optimization</h4>
-                  <p className="text-sm text-muted-foreground">Scalable architecture & efficient solutions</p>
+                  <div className="text-2xl">🤖</div>
+                  <h4 className="font-semibold text-neon-cyan">Gen-AI & RAG</h4>
+                  <p className="text-sm text-muted-foreground">LLM integration, vector search, agentic pipelines</p>
                 </div>
               </div>
             </CardContent>

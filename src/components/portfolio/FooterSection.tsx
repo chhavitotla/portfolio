@@ -171,7 +171,7 @@ export function FooterSection() {
         <div className="container mx-auto px-6 mt-16 relative z-10">
           <div className="text-center space-y-6">
             <p className="text-muted-foreground text-sm">
-              © 2025 Swayam Patel • Crafted with{' '}
+              © 2025 Chhavi Totla • Crafted with{' '}
               <span className="text-primary animate-pulse">code</span>{' '}
               and{' '}
               <span className="text-accent">creativity</span>

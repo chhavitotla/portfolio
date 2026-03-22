@@ -1,45 +1,43 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { 
   Mail, 
   Github, 
   Linkedin, 
-  MapPin, 
-  Phone
+  MapPin,
+  Code2
 } from 'lucide-react';
 
 const contactMethods = [
   {
     icon: Mail,
     label: "Email",
-    value: "swayampatel2421@gmail.com",
-    href: "mailto:swayampatel2421@gmail.com",
+    value: "totlachhavi@gmail.com",
+    href: "mailto:totlachhavi@gmail.com",
     color: "primary"
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/Swayam8115",
-    href: "https://github.com/Swayam8115",
+    value: "github.com/chhavitotla",
+    href: "https://github.com/chhavitotla",
     color: "accent"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/swayam-patel-4032a7297/",
-    href: "https://www.linkedin.com/in/swayam-patel-4032a7297/",
+    value: "linkedin.com/in/chhavi-totla-332176305",
+    href: "https://www.linkedin.com/in/chhavi-totla-332176305",
     color: "neon-cyan"
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: "IIIT Pune, India",
-    href: "#",
+    icon: Code2,
+    label: "LeetCode",
+    value: "leetcode.com/u/ChhaviTotla",
+    href: "https://leetcode.com/u/ChhaviTotla/",
     color: "neon-green"
   }
 ];
-
 
 export function ContactSection() {
   return (
@@ -50,7 +48,7 @@ export function ContactSection() {
       <div className="absolute bottom-20 right-20 w-32 h-32 border border-accent/20 rounded-full floating-animation" style={{ animationDelay: '3s' }} />
       <div className="absolute top-1/2 left-10 w-6 h-6 bg-neon-green/30 rounded-full animate-pulse" />
       <div className="absolute top-1/3 right-10 w-4 h-4 bg-primary/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -63,13 +61,13 @@ export function ContactSection() {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-12">
-          
+
           {/* Contact Methods */}
           <div className="grid md:grid-cols-2 gap-6">
             {contactMethods.map((contact, index) => {
               const Icon = contact.icon;
               return (
-                <Card 
+                <Card
                   key={contact.label}
                   className="portfolio-card group cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -105,14 +103,14 @@ export function ContactSection() {
               </CardHeader>
               <CardContent className="text-center space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  Whether you're looking for a collaborator on an innovative project, 
-                  seeking technical expertise, or exploring internship opportunities, 
+                  Whether you're looking for a collaborator on an innovative project,
+                  seeking technical expertise, or exploring internship opportunities,
                   I'd love to hear from you!
                 </p>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
-                  onClick={() => window.open('mailto:swayampatel2421@gmail.com', '_blank')}
+                  onClick={() => window.open('mailto:totlachhavi@gmail.com', '_blank')}
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Send Email
@@ -120,7 +118,6 @@ export function ContactSection() {
               </CardContent>
             </Card>
           </div>
-
 
         </div>
       </div>
