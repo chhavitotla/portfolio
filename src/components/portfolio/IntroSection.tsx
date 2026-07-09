@@ -63,9 +63,14 @@ export function IntroSection() {
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-4">
-              <Badge variant="secondary" className="text-primary border-primary/30">
-                Chemical Engineering • SVNIT Surat
-              </Badge>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="secondary" className="text-primary border-primary/30">
+                  AI Engineer & Full-Stack Developer
+                </Badge>
+                <Badge variant="secondary" className="text-primary border-primary/30">
+                  SVNIT Surat
+                </Badge>
+              </div>
               <div>
                 <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight">
                   <span className="gradient-text">Hello,</span>
@@ -131,21 +136,23 @@ export function IntroSection() {
               {/* Main Image Container */}
               <div className="relative h-96 flex items-center justify-center">
                 <div className="relative z-10">
-                  {/* Profile Image */}
-                  <div className="relative w-80 h-80 rounded-full overflow-hidden border-2 border-gradient-to-br from-primary via-neon-cyan to-neon-purple shadow-2xl">
-                    <img
-                      src="/Image_banner.jpg"
-                      alt="Chhavi Totla"
-                      className="w-full h-full object-cover scale-110 hover:scale-125 transition-transform duration-700 ease-out"
-                    />
+                  {/* Profile Image Wrapper (Fixed Tailwind Gradient Border) */}
+                  <div className="relative w-80 h-80 rounded-full p-[2px] bg-gradient-to-br from-primary via-neon-cyan to-neon-purple shadow-2xl">
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <img
+                        src="/Image_banner.jpg"
+                        alt="Chhavi Totla"
+                        className="w-full h-full object-cover scale-110 hover:scale-125 transition-transform duration-700 ease-out"
+                      />
+                    </div>
 
                     {/* Animated Scanning Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-primary/5 to-transparent animate-pulse" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-cyan/10 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-primary/5 to-transparent animate-pulse rounded-full pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-cyan/10 to-transparent animate-pulse rounded-full pointer-events-none" style={{ animationDelay: '1s' }} />
 
                     {/* Glowing Ring Effect */}
-                    <div className="absolute -inset-2 rounded-full border border-primary/30 animate-pulse" />
-                    <div className="absolute -inset-4 rounded-full border border-neon-cyan/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                    <div className="absolute -inset-2 rounded-full border border-primary/30 animate-pulse pointer-events-none" />
+                    <div className="absolute -inset-4 rounded-full border border-neon-cyan/20 animate-pulse pointer-events-none" style={{ animationDelay: '0.5s' }} />
                   </div>
 
                   {/* Status Indicator */}
@@ -172,7 +179,7 @@ export function IntroSection() {
                 </div>
 
                 {/* Orbiting Particles */}
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 pointer-events-none">
                   <div className="w-full h-full relative animate-spin" style={{ animationDuration: '30s' }}>
                     <div className="absolute top-4 left-1/2 w-2 h-2 bg-primary rounded-full -translate-x-1/2 animate-pulse" />
                     <div className="absolute bottom-4 left-1/2 w-1.5 h-1.5 bg-neon-cyan rounded-full -translate-x-1/2 animate-pulse" style={{ animationDelay: '0.5s' }} />
@@ -182,10 +189,10 @@ export function IntroSection() {
                 </div>
 
                 {/* Holographic Corner Frames */}
-                <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-primary/50 rounded-tl-2xl" />
-                <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-neon-cyan/50 rounded-tr-2xl" />
-                <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-accent/50 rounded-bl-2xl" />
-                <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-neon-green/50 rounded-br-2xl" />
+                <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-primary/50 rounded-tl-2xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-neon-cyan/50 rounded-tr-2xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-accent/50 rounded-bl-2xl pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-neon-green/50 rounded-br-2xl pointer-events-none" />
               </div>
             </div>
           </div>

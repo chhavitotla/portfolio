@@ -11,7 +11,7 @@ const projects = [
     description: "An intelligent meal planning platform leveraging hybrid retrieval and a multi-agent LangGraph architecture to deliver personalized, constraint-aware recipe recommendations — reducing decision fatigue with 92% of users reporting faster meal selection.",
     highlights: [
       "Hybrid Retrieval System: Built with FastAPI, Next.js, MongoDB, and FAISS using deterministic filtering + semantic search for personalized, constraint-aware recipe recommendations",
-      "Multi-Agent Planning: Designed a LangGraph-based multi-agent system for meal optimization incorporating nutrition scoring, pantry balancing, and iterative refinement — achieving avg 800ms end-to-end latency (990ms under 5 concurrent users)",
+      "Agentic AI Planning: Designed a LangGraph-based agentic AI system for meal optimization incorporating nutrition scoring, pantry balancing, and iterative refinement — achieving avg 800ms end-to-end latency (990ms under 5 concurrent users)",
       "Production-Grade AI Pipeline: Engineered with Pydantic + Zod schema validation, Redis-based rate limiting, and fallback-safe LLM orchestration — 100% request success rate across 50 load-tested requests and 100% schema rejection rate on malformed inputs",
       "User Impact: 87% of users reported improved organization and budgeting; 92% reported faster meal selection"
     ],

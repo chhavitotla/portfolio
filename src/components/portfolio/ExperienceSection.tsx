@@ -3,6 +3,37 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building, MapPin, Calendar, ExternalLink } from 'lucide-react';
 
 const experiences = [
+  // 1. Solnce Energy (Newly Added)
+  {
+    role: "Software Engineering Intern",
+    company: "Solnce Energy",
+    location: "Surat, India",
+    period: "Apr 2026 – Jun 2026",
+    website: null, // Add website URL here if available (e.g., "https://solnceenergy.com")
+    theme: "neon-cyan", // Using your design's custom theme key
+    bullets: [
+      {
+        color: "neon-cyan",
+        label: "Multi-Agent Conversational AI",
+        badge: "AI & Agents",
+        text: "Increased lead qualification efficiency by 94% by architecting a multi-agent conversational AI system with LangGraph and Gemini, orchestrating 12 specialized nodes across a supervisor-routed graph, deployed across WhatsApp, web, and mobile app."
+      },
+      {
+        color: "accent",
+        label: "Hybrid RAG Pipeline",
+        badge: "LLMOps",
+        text: "Engineered a hybrid RAG pipeline with Pinecone (dense) + BM25 (sparse) retrieval, reranking, and confidence-gated synthesis, hardened with deterministic guardrails and rate limiting, achieving a 0.96 composite score and 100% scope-detection accuracy across LangSmith evaluations."
+      },
+      {
+        color: "primary",
+        label: "Full-Stack Development",
+        badge: "Full Stack",
+        text: "Built 5+ full-stack admin panel pages using Next.js, Node.js, Express, and MySQL, implementing secure REST APIs and database-integrated workflows."
+      }
+    ],
+    technologies: ["LangGraph", "Gemini", "Pinecone", "BM25", "LangSmith", "Next.js", "Node.js", "Express", "MySQL"]
+  },
+  // 2. Cheesecake Mills
   {
     role: "Web Developer",
     company: "Cheesecake Mills",
@@ -26,6 +57,7 @@ const experiences = [
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS"]
   },
+  // 3. Apna College
   {
     role: "Teaching Assistant — DSA/C++",
     company: "Apna College",
@@ -69,7 +101,7 @@ export function ExperienceSection() {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp) => (
-            <Card key={exp.role} className="portfolio-card group">
+            <Card key={`${exp.company}-${exp.role}`} className="portfolio-card group">
               <CardHeader className="pb-4">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div className="space-y-2">

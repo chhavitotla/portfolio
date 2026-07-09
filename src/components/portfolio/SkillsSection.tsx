@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Database, Wrench, Cloud, Brain } from 'lucide-react';
+import { Code, Database, Wrench, Brain } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -18,13 +18,13 @@ const skillCategories = [
   {
     title: "AI & Vector Tools",
     icon: Brain,
-    skills: ["FAISS", "Pydantic", "Zod", "Google Gemini"],
+    skills: ["Google Gemini", "Pinecone", "FAISS", "Pydantic", "Zod", "BM25"],
     color: "neon-cyan"
   },
   {
     title: "Databases & Infra",
     icon: Database,
-    skills: ["MongoDB", "MySQL", "Redis", "Git", "Postman"],
+    skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Docker", "Git", "Postman"],
     color: "neon-green"
   }
 ];
@@ -101,7 +101,7 @@ export function SkillsSection() {
                 <div className="space-y-2">
                   <div className="text-2xl">🧠</div>
                   <h4 className="font-semibold text-primary">CS Fundamentals</h4>
-                  <p className="text-sm text-muted-foreground">DSA, OOP, DBMS, Operating Systems</p>
+                  <p className="text-sm text-muted-foreground">DSA, OOP, DBMS, OS, Computer Networks</p>
                 </div>
                 <div className="space-y-2">
                   <div className="text-2xl">🌐</div>
@@ -111,7 +111,7 @@ export function SkillsSection() {
                 <div className="space-y-2">
                   <div className="text-2xl">🤖</div>
                   <h4 className="font-semibold text-neon-cyan">Gen-AI & RAG</h4>
-                  <p className="text-sm text-muted-foreground">LLM integration, vector search, agentic pipelines</p>
+                  <p className="text-sm text-muted-foreground">Agentic pipelines, hybrid dense/sparse retrieval, guardrails</p>
                 </div>
               </div>
             </CardContent>

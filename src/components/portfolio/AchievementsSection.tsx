@@ -1,7 +1,6 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, Trophy, Users, Code2, Globe, TrendingUp, ExternalLink, Medal } from 'lucide-react';
+import { Award, Trophy, Users, Code2, Globe, TrendingUp, BookOpen, HeartHandshake } from 'lucide-react';
 
 const achievements = [
   {
@@ -13,9 +12,16 @@ const achievements = [
   },
   {
     icon: TrendingUp,
-    title: "LeetCode Contest Rating — 1648",
-    description: "Achieved a peak contest rating of 1648 through consistent participation in competitive programming contests.",
+    title: "LeetCode Contest Rating — 1648 (Top 17.5%)",
+    description: "Achieved a peak contest rating of 1648, ranking in the top 17.5% through consistent participation in competitive programming contests.",
     color: "accent",
+    type: "achievement"
+  },
+  {
+    icon: BookOpen,
+    title: "Technical Writing — 2,500+ Impressions",
+    description: "Authored techno-philosophical and technical articles on Medium, bridging engineering depth with first-principles thinking.",
+    color: "neon-cyan",
     type: "achievement"
   }
 ];
@@ -33,16 +39,25 @@ const extracurriculars = [
     icon: Globe,
     title: "Executive Member",
     organization: "Google Developer Student Club (GDGC)",
-    description: "Initiated and led 5+ workshops on web development (HTML/CSS, React), machine learning basics, and cloud computing.",
+    description: "Initiated and led 5+ workshops on web development (HTML/CSS, React) and machine learning basics.",
     color: "neon-green",
     hoverColor: "neon-cyan"
+  },
+  {
+    icon: HeartHandshake,
+    title: "Career Mentor",
+    organization: "Branch Transition Initiative",
+    description: "Mentored 30+ chemical engineering students on building software careers from a non-CS branch, covering internship strategy, placement preparation, and skill roadmaps.",
+    color: "primary",
+    hoverColor: "neon-green"
   }
 ];
 
 export function AchievementsSection() {
   return (
     <section className="min-h-screen py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-background/95" />
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-15" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
@@ -52,7 +67,7 @@ export function AchievementsSection() {
             <span className="text-neon-cyan">Leadership</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Milestones achieved through dedication, creativity, and collaborative leadership
+            Milestones achieved through dedication, technical excellence, and community leadership
           </p>
         </div>
 
@@ -66,7 +81,7 @@ export function AchievementsSection() {
             <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
@@ -81,14 +96,14 @@ export function AchievementsSection() {
                         <Icon className={`w-8 h-8 text-${achievement.color}`} />
                       </div>
                       <div className="flex-1 space-y-2">
-                        <CardTitle className={`text-xl lg:text-2xl text-${achievement.color} group-hover:text-${achievement.color === 'primary' ? 'neon-cyan' : 'primary'} transition-colors`}>
+                        <CardTitle className={`text-xl text-${achievement.color} group-hover:text-neon-cyan transition-colors`}>
                           {achievement.title}
                         </CardTitle>
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground leading-relaxed">
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
                       {achievement.description}
                     </p>
                   </CardContent>
@@ -108,13 +123,13 @@ export function AchievementsSection() {
             <div className="h-px flex-1 bg-gradient-to-r from-neon-green/50 to-transparent" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {extracurriculars.map((activity, index) => {
               const Icon = activity.icon;
               return (
                 <Card
-                  key={activity.organization}
-                  className={`group hover:shadow-xl transition-all duration-500 border-${activity.color}/30 hover:border-${activity.hoverColor}/60 bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-sm hover:scale-105 cursor-pointer`}
+                  key={`${activity.organization}-${activity.title}`}
+                  className={`group hover:shadow-xl transition-all duration-500 border-${activity.color}/30 hover:border-${activity.hoverColor}/60 bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-sm hover:scale-[1.02]`}
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   <CardHeader className="pb-4">
@@ -126,7 +141,7 @@ export function AchievementsSection() {
                         <CardTitle className={`text-lg text-${activity.color} group-hover:text-${activity.hoverColor} transition-colors duration-300`}>
                           {activity.title}
                         </CardTitle>
-                        <p className={`text-sm font-medium text-${activity.color}/80 group-hover:text-${activity.hoverColor}/90 transition-colors leading-relaxed`}>
+                        <p className={`text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed`}>
                           {activity.organization}
                         </p>
                       </div>
