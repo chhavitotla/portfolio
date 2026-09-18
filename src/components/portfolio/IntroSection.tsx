@@ -1,4 +1,3 @@
-```tsx
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Github, Linkedin, Code2, Download } from 'lucide-react';
@@ -208,12 +207,4 @@ export function IntroSection() {
     </section>
   );
 }
-```
 
-**Only this line changed:**
-
-```tsx
-onClick={() => window.open('/resume.pdf', '_blank')}
-```
-
-Everything else is unchanged from your uploaded file.
