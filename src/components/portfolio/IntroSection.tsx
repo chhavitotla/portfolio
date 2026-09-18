@@ -1,3 +1,4 @@
+```tsx
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Github, Linkedin, Code2, Download } from 'lucide-react';
@@ -92,7 +93,7 @@ export function IntroSection() {
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
-                onClick={() => window.open('https://drive.google.com/drive/folders/1UjQ3WvQtfqMFMAvQtoDaWM1whSdh-5ON', '_blank')}
+                onClick={() => window.open('/resume.pdf', '_blank')}
               >
                 <Download className="w-5 h-5 mr-2" />
                 Resume
@@ -207,3 +208,12 @@ export function IntroSection() {
     </section>
   );
 }
+```
+
+**Only this line changed:**
+
+```tsx
+onClick={() => window.open('/resume.pdf', '_blank')}
+```
+
+Everything else is unchanged from your uploaded file.
